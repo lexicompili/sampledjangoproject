@@ -29,3 +29,9 @@ class Recipe(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def ingredients_list(self):
+        return self.ingredients.split('\n')
+
+    def method_list(self):
+        return self.method.split('\n')

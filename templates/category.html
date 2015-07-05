@@ -1,0 +1,19 @@
+<!-- RECIPES -->
+{% for recipe in recipes %}
+    <div class="recipe-item">
+        <article>
+            <a class="recipe-image" href="/{{ recipe.category.slug }}/{{ recipe.id }}/{{ recipe.slug }}/">
+                <img src="{{ recipe.photo.url }}" alt="{{ recipe.title }}">
+                <h2 class="recipe-title">{{ recipe.title }}</h2>
+            </a>
+
+            <p>{{ recipe.description|truncatewords:20 }}</p>
+            <div class="recipe-info">
+                <span class="total-time">{{ recipe.cooktime }} minutes</span>
+                <span class="kcals">{{ recipe.calories }} kcals</span>
+                <span class="icons icons vegetarian-icon"></span>
+            </div>
+        </article>
+    </div>
+{% endfor %}
+<!-- RECIPES -->
